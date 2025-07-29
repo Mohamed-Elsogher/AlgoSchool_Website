@@ -95,16 +95,17 @@
           </table>
         </div>
         <div class="col-md-6 text-center">
-          <img src="./Images/fibonacci.png" alt="Fibonacci" class="img-fluid" style="max-width: 500px;">
+          <img src="./Images/fibonacci.png" alt="Fibonacci" class="img-fluid w-100" style="max-width: 500px;">
         </div>
       </div>
     </div>
     <div class="container mb-5">
       <h4 class="fw-bold">C++ Code:</h4>
+      <div style="overflow-x: auto;">
       <pre class="bg-success text-white p-4 rounded">
 vector&lt;int&gt; memo(n+1, -1);
 
-int fib(int n, vector&lt;int&gt;& memo) {
+int fib(int n) {
       // base case
     if(n &lt;= 1) return n;
     // memo 
@@ -113,6 +114,7 @@ int fib(int n, vector&lt;int&gt;& memo) {
     return memo[n] = fib(n-1) + fib(n-2);
 }
       </pre>
+      </div>
     </div>
        <!---End of the page--->
   <div class="container-fluid bg-dark text-light py-4">
