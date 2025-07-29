@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Dynamic programming</title>
+      <link href="./CSS/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+       <!--Nav Bar--->
+    <nav class="navbar navbar-expand-sm bg-success navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="#">
+          <img src="./Images/Computer.png" alt="AlgoSchool Logo" width="40" height="34" class="me-2">
+          AlgoSchool
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+
+            <li class="nav-item">
+              <a class="nav-link active" href="home.html">Home</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Algorithms
+              </a>
+
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Array Techniques</a></li>
+                <li><a class="dropdown-item" href="Dp.html">Dynamic Programming</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Graphs</a>
+            </li>
+
+          </ul>
+
+          <button  onclick="location.href='sign_in.html'" class="btn btn-outline-light" type="button">Sign In</button>
+
+        </div>
+      </div>
+    </nav>
+    <!----NavBar end ----->
+    <div class="container mt-3">
+  <nav style="--bs-breadcrumb-divider: ' / '; font-size: 0.9rem;" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="home.html" class="text-decoration-none text-success">Home</a></li>
+      <li class="breadcrumb-item active text-muted" aria-current="page">DP</li>
+    </ol>
+  </nav>
+      </div>
+ <!-- Alert -->
+    <div class="container mt-4">
+      <div class="alert alert-info text-center" role="alert">
+        <strong>Note:</strong> Climbing Stairs and Coin Change will be added later.
+      </div>
+    </div>
+    <!-- Fibonacci---->
+    <div class="container my-5">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h2 class="display-6 text-start text-success fw-bold">Fibonacci</h2>
+          <p>In Recursion, we calculate the same value many times, which leads to exponential time complexity <strong>O(2<sup>n</sup>)</strong>. With Dynamic Programming, we store the results (memoization) and reduce the time to <strong>O(n)</strong>.<br> <b>similar qeustion </b><a href="https://leetcode.com/problems/n-th-tribonacci-number/description/">n-th-tribonacci</a> <br> <strong>playlist </strong><a href="https://www.youtube.com/watch?v=rsj1qoHJLXs&list=PLa1br9kHb5PXdb-Sz9t8pWQza045rByMP">DP Playlist</a></p>
+
+          <table class="table table-bordered mt-4">
+            <thead class="table-success">
+              <tr>
+                <th>Recursion</th>
+                <th>Dynamic Programming</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Repeated calls</td>
+                <td>Memoization</td>
+              </tr>
+              <tr>
+                <td>O(2<sup>n</sup>)</td>
+                <td>O(n)</td>
+              </tr>
+              <tr>
+                <td>Simple but inefficient</td>
+                <td>Efficient and scalable</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-md-6 text-center">
+          <img src="./Images/fibonacci.png" alt="Fibonacci" class="img-fluid" style="max-width: 500px;">
+        </div>
+      </div>
+    </div>
+    <div class="container mb-5">
+      <h4 class="fw-bold">C++ Code:</h4>
+      <pre class="bg-success text-white p-4 rounded">
+vector&lt;int&gt; memo(n+1, -1);
+
+int fib(int n, vector&lt;int&gt;& memo) {
+      // base case
+    if(n &lt;= 1) return n;
+    // memo 
+    if(memo[n] != -1) return memo[n];
+    // transition
+    return memo[n] = fib(n-1) + fib(n-2);
+}
+      </pre>
+    </div>
+       <!---End of the page--->
+  <div class="container-fluid bg-dark text-light py-4">
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-md-5 mb-4 mb-md-0">
+          <h3 class="fw-bold mb-3">Contact Me</h3>
+
+          <a href="https://github.com/Mohamed-Elsogher" target="_blank" class="text-light text-decoration-none d-flex align-items-center mb-2">
+            <img src="./Images/github-logo.png" alt="GitHub" style="width: 24px; height: 24px;" class="me-2">
+            GitHub
+          </a>
+
+          <a href="https://www.linkedin.com/in/mohamed-abdelhady-a3a1802a3/" target="_blank" class="text-light text-decoration-none d-flex align-items-center">
+            <img src="./Images/linkedin.png" alt="LinkedIn" style="width: 24px; height: 24px;" class="me-2">
+            LinkedIn
+          </a>
+        </div>
+
+        <div class="col-md-5">
+          <h5 class="fw-bold mb-3">Send me an Email</h5>
+          <form>
+            <div class="mb-2">
+              <label for="name" class="form-label">Your Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+            </div>
+
+            <div class="mb-2">
+              <label for="message" class="form-label">Your Message</label>
+              <textarea class="form-control" id="message" rows="3" placeholder="Write your message..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-success px-3 mt-2">Send</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
